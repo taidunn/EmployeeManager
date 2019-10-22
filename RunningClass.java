@@ -13,6 +13,7 @@ public class RunningClass {
 	public static void main(String[] args) {
 		Date date1 = new Date();
 		Input askForInput = new Input();
+		do {
 		num = askForInput.promptForInput();
 		//promptForInput();
 		//mainInfo = askForInput.promptForString();
@@ -49,5 +50,6 @@ public class RunningClass {
 		default:
 			break;
 			}
+		}while(num < 5 && num > 0);
 		}
 	}
