@@ -21,6 +21,7 @@ public class Input {
 	private static String info13;
 	private static String info14;
 	private static String info15;
+	private final String class1 = "Class One";
 
 
 	
@@ -38,7 +39,7 @@ public class Input {
 		infoFN = reader.nextLine();
 		System.out.println("Input for LName" );
 		infoLN = reader.nextLine();
-		System.out.println("Input for Class1" );
+		System.out.println("Input expiring date for Class One: ");
 		info1 = reader.nextLine();
 		System.out.println("Input for Class2" );
 		info2 = reader.nextLine();
@@ -68,12 +69,13 @@ public class Input {
 		info14 = reader.nextLine();
 		System.out.println("Input for Class15" );
 		info15 = reader.nextLine();
-
 		
-		
+		//Placeholder Class1 = new Placeholder(info1, info2);
+		Employee newEmployee = new Employee(infoID, infoFN, infoLN, info1, info2, info3, info4, info5, info6, info7, info8, info9, info10, info11, info12, info13, info14, info15);
+		newEmployee.print();
 		
 		
 		//Employee newEmployee = new Employee(info)
-		//return info;
+		return info1;
 	}
 }
