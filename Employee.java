@@ -1,1 +1,190 @@
+import java.time.LocalDate; //Importing the current date at application running point.
 
+public class Employee {
+	private String EmployeeID;
+	private String FName;
+	private String LName;
+	private String Class1;
+	private String Class2;
+	private String Class3;
+	private String Class4;
+	private String Class5;
+	private String Class6;
+	private String Class7;
+	private String Class8;
+	private String Class9;
+	private String Class10;
+	private String Class11;
+	private String Class12;
+	private String Class13;
+	private String Class14;
+	private String Class15;
+	
+	
+	public Employee(String EmployeeID, String FName) {
+		this.EmployeeID = EmployeeID;
+		this.FName = FName;
+		this.LName = LName;
+		this.Class1 = Class1;
+		this.Class2 = Class2;
+		this.Class3 = Class3;
+		this.Class4 = Class4;
+		this.Class5 = Class5;
+		this.Class6 = Class6;
+		this.Class7 = Class7;
+		this.Class8 = Class8;
+		this.Class9 = Class9;
+		this.Class10 = Class10;
+		this.Class11 = Class11;
+		this.Class12 = Class12;
+		this.Class13 = Class13;
+		this.Class14 = Class14;
+		this.Class15 = Class15;
+		
+	}
+	
+	public String getEmployeeId() {
+		return EmployeeID;
+	}
+	
+	public void setEmployeeId(String EmployeeId) {
+		this.EmployeeID = EmployeeId;
+	}
+	
+	public String getFName() {
+		return FName;
+	}
+	
+	public void setFName(String FName) {
+		this.FName = FName;
+	}
+	
+	public String getLName() {
+		return LName;
+	}
+	
+	public void setLName(String LName) {
+		this.LName = LName;
+	}
+	
+	public String getClass1() {
+		return Class1;
+	}
+	
+	public void setClass1(String Class1) {
+		this.Class1 = Class1;
+	}
+	
+	public String getClass2() {
+		return Class2;
+	}
+	
+	public void setClass2(String Class2) {
+		this.Class2 = Class2;
+	}
+	
+	public String getClass3() {
+		return Class3;
+	}
+	
+	public void setClass3(String Class3) {
+		this.Class3 = Class3;
+	}
+	
+	public String getClass4() {
+		return Class4;
+	}
+	
+	public void setClass4(String Class4) {
+		this.Class4 = Class4;
+	}
+	
+	public String getClass5() {
+		return Class5;
+	}
+	
+	public void setClass5(String Class5) {
+		this.Class5 = Class5;
+	}
+	
+	public String getClass6() {
+		return Class6;
+	}
+	
+	public void setClass6(String Class6) {
+		this.Class6 = Class6;
+	}
+	
+	public String getClass7() {
+		return Class7;
+	}
+	
+	public void setClass7(String Class7) {
+		this.Class7 = Class7;
+	}
+	
+	public String getClass8() {
+		return Class8;
+	}
+	
+	public void setClass8(String Class8) {
+		this.Class8 = Class8;
+	}
+	
+	public String getClass9() {
+		return Class9;
+	}
+	
+	public void setClass9(String Class9) {
+		this.Class9 = Class9;
+	}
+	
+	public String getClass10() {
+		return Class10;
+	}
+	
+	public void setClass10(String Class10) {
+		this.Class10 = Class10;
+	}
+	
+	public String getClass11() {
+		return Class11;
+	}
+	
+	public void setClass11(String Class11) {
+		this.Class11 = Class11;
+	}
+	
+	public String getClass12() {
+		return Class12;
+	}
+	
+	public void setClass12(String Class12) {
+		this.Class12 = Class12;
+	}
+	
+	public String getClass13() {
+		return Class13;
+	}
+	
+	public void setClass13(String Class13) {
+		this.Class13 = Class13;
+	}
+	
+	public String getClass14() {
+		return Class14;
+	}
+	
+	public void setClass14(String Class14) {
+		this.Class14 = Class14;
+	}
+	
+	public String getClass15() {
+		return Class15;
+	}
+	
+	public void setClass15(String Class15) {
+		this.Class15 = Class15;
+	}
+	
+}
