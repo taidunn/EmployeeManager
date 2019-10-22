@@ -19,31 +19,47 @@ public class Employee {
 	private String Class13;
 	private String Class14;
 	private String Class15;
+	/*private Placeholder EmployeeClass1;
+	private Placeholder EmployeeClass2;
+	private Placeholder EmployeeClass3;
+	private Placeholder EmployeeClass4;
+	private Placeholder EmployeeClass5;
+	private Placeholder EmployeeClass6;
+	private Placeholder EmployeeClass7;
+	private Placeholder EmployeeClass8;
+	private Placeholder EmployeeClass9;
+	private Placeholder EmployeeClass10;
+	private Placeholder EmployeeClass11;
+	private Placeholder EmployeeClass12;
+	private Placeholder EmployeeClass13;
+	private Placeholder EmployeeClass14;
+	private Placeholder EmployeeClass15;*/
+
+
 	
-	
-	public Employee(String EmployeeID, String FName) {
+	public Employee(String EmployeeID, String FName, String LName, String info1, String info2, String info3, String info4, String info5, String info6, String info7, String info8, String info9, String info10, String info11, String info12, String info13, String info14, String info15) {
 		this.EmployeeID = EmployeeID;
 		this.FName = FName;
 		this.LName = LName;
-		this.Class1 = Class1;
-		this.Class2 = Class2;
-		this.Class3 = Class3;
-		this.Class4 = Class4;
-		this.Class5 = Class5;
-		this.Class6 = Class6;
-		this.Class7 = Class7;
-		this.Class8 = Class8;
-		this.Class9 = Class9;
-		this.Class10 = Class10;
-		this.Class11 = Class11;
-		this.Class12 = Class12;
-		this.Class13 = Class13;
-		this.Class14 = Class14;
-		this.Class15 = Class15;
+		this.Class1 = info1;
+		this.Class2 = info2;
+		this.Class3 = info3;
+		this.Class4 = info4;
+		this.Class5 = info5;
+		this.Class6 = info6;
+		this.Class7 = info7;
+		this.Class8 = info8;
+		this.Class9 = info9;
+		this.Class10 = info10;
+		this.Class11 = info11;
+		this.Class12 = info12;
+		this.Class13 = info13;
+		this.Class14 = info14;
+		this.Class15 = info15;
 		
 	}
 	
-	public String getEmployeeId() {
+	/*public String getEmployeeId() {
 		return EmployeeID;
 	}
 	
@@ -185,6 +201,12 @@ public class Employee {
 	
 	public void setClass15(String Class15) {
 		this.Class15 = Class15;
+	}*/
+	
+	public void print() {
+		System.out.println(EmployeeID);
+		System.out.println(FName);
 	}
+	
 	
 }
