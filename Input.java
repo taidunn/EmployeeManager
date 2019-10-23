@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Input {
@@ -31,7 +32,7 @@ public class Input {
 		num = reader.nextInt();
 		return num;
 	}
-	public String promptForString() {
+	public String promptForString(ArrayList<Employee> EmployeeList) {
 		Scanner reader = new Scanner(System.in);  // Reading from System.in
 		System.out.println("Input for EmployeeID" );
 		infoID = reader.nextLine();
@@ -72,8 +73,13 @@ public class Input {
 		
 		//Placeholder Class1 = new Placeholder(info1, info2);
 		Employee newEmployee = new Employee(infoID, infoFN, infoLN, info1, info2, info3, info4, info5, info6, info7, info8, info9, info10, info11, info12, info13, info14, info15);
-		newEmployee.print();
+		//newEmployee.print();
 		
+		EmployeeList.add(newEmployee);
+		
+		for(int i = 0;i < EmployeeList.size();i++) {
+		EmployeeList.get(i).print();
+		}
 		
 		//Employee newEmployee = new Employee(info)
 		return info1;
