@@ -36,6 +36,9 @@ public class Employee {
 	private Placeholder EmployeeClass15;*/
 
 
+	public Employee() {
+		
+	}
 	
 	public Employee(String EmployeeID, String FName, String LName, String info1, String info2, String info3, String info4, String info5, String info6, String info7, String info8, String info9, String info10, String info11, String info12, String info13, String info14, String info15) {
 		this.EmployeeID = EmployeeID;
@@ -59,7 +62,7 @@ public class Employee {
 		
 	}
 	
-	/*public String getEmployeeId() {
+	public String getEmployeeId() {
 		return EmployeeID;
 	}
 	
@@ -201,11 +204,27 @@ public class Employee {
 	
 	public void setClass15(String Class15) {
 		this.Class15 = Class15;
-	}*/
+	}
 	
 	public void print() {
-		System.out.println(EmployeeID);
+		System.out.println("\nEmployee ID: " + EmployeeID);
 		System.out.println(FName);
+		System.out.println(LName);
+		System.out.println(Class1);
+		System.out.println(Class2);
+		System.out.println(Class3);
+		System.out.println(Class4);
+		System.out.println(Class5);
+		System.out.println(Class6);
+		System.out.println(Class7);
+		System.out.println(Class8);
+		System.out.println(Class9);
+		System.out.println(Class10);
+		System.out.println(Class11);
+		System.out.println(Class12);
+		System.out.println(Class13);
+		System.out.println(Class14);
+		System.out.println(Class15);
 	}
 	
 	
