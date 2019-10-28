@@ -6,6 +6,7 @@ import javax.swing.JOptionPane;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.io.*;
+import java.text.ParseException;
 import java.awt.RenderingHints;
 import java.awt.image.BufferedImage;
 
@@ -16,11 +17,13 @@ public class RunningClass {
 	private static String mainInfo;
 
 
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws IOException, ParseException {
 //		LatencyHelp progress = new LatencyHelp();
 //		progress.bar();
 		Disclaimer disclaimer1 = new Disclaimer();
 		disclaimer1.unknown();
+		
+		
 		Date date1 = new Date();
 		Input askForInput = new Input();
 		EditingEmployee editEmployee = new EditingEmployee();
@@ -45,9 +48,16 @@ public class RunningClass {
             ex.printStackTrace();
         }
 		
+		
 		Scanner reader = new Scanner(System.in);  // Reading from System.in
 		do {
-			System.out.println("\n1 - Make a new employee. \n2 - Edit an Employee. \n3 - Print the Table \n4 - Delete/Hide an Employee \n5 - Write to the file.. If you don't do this your progress will be lost!");
+			System.out.println("What would you like to do?"
+					+ "\n1 - Make a new employee. "
+					+ "\n2 - Edit an Employee. "
+					+ "\n3 - Print the Table "
+					+ "\n4 - Delete/Hide an Employee "
+					+ "\n5 - Will check for expiring or expired classes"
+					+ "\n6 - Write to the file.. If you don't do this your progress will be lost!");
 		num = askForInput.promptForInput();
 		//promptForInput();
 		//mainInfo = askForInput.promptForString();
@@ -79,6 +89,11 @@ public class RunningClass {
 			deleteEmployee.DeleteEmployee(employeeList);
 			break;
 		case 5:
+			//INCOMPLETE
+			//This will check for expiring classes
+			DateComparison compdate = new DateComparison();
+			compdate.DateComparison(employeeList);
+		case 6:
 			try {
 				FileOutputStream fileOut = new FileOutputStream("output.txt");
 				ObjectOutputStream objectOut = new ObjectOutputStream(fileOut);
