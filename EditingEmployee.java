@@ -24,7 +24,23 @@ public class EditingEmployee {
 		return;
 		}
 		
-		System.out.println("What would you like to edit \n1 - First Name: \n2 - Last Name:");
+		System.out.println("What would you like to edit? "
+				+ "\n1 - First Name: "
+				+ "\n2 - Last Name:"
+				+ "\n3 - Class1"
+				+ "\n4 - Class2"
+				+ "\n5 - Class3"
+				+ "\n6 - Class4"
+				+ "\n7 - Class5"
+				+ "\n8 - Class6"
+				+ "\n9 - Class7"
+				+ "\n10 - Class9"
+				+ "\n11 - Class10"
+				+ "\n12 - Class11"
+				+ "\n13 - Class12"
+				+ "\n14 - Class13"
+				+ "\n15 - Class14"
+				+ "\n16 - Class15");
 		editcase = reader.nextInt();
 		
 		switch (editcase) {
