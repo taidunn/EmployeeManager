@@ -1,5 +1,8 @@
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
+
+import javax.swing.JOptionPane;
 
 public class Input {
 	
@@ -80,6 +83,23 @@ public class Input {
 		for(int i = 0;i < employeeList.size();i++) {
 		employeeList.get(i).print();
 		}
+		
+//		try {
+//			FileWriter fw = new FileWriter("output.txt");
+//			Writer output = new BufferedWriter(fw);
+//			int sz = employeeList.size();
+//			for (int i = 0; i < sz; i++) {
+//				output.write(employeeList.get(i).getEmployeeId() + "\n");
+//			}
+//			output.close();
+//		} catch (Exception e) {
+//			JOptionPane.showMessageDialog(null, "I can not create that file");
+//		}
+		
+
+		
+		
+		
 		
 		//Employee newEmployee = new Employee(info)
 		return info1;
