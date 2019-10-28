@@ -1,6 +1,7 @@
+import java.io.Serializable;
 import java.time.LocalDate; //Importing the current date at application running point.
 
-public class Employee {
+public class Employee implements Serializable {
 	private String EmployeeID;
 	private String FName;
 	private String LName;
@@ -208,6 +209,27 @@ public class Employee {
 	
 	public void print() {
 		System.out.println("\nEmployee ID: " + EmployeeID);
+		System.out.println("\nFirst Name: " + FName);
+		System.out.println("\nLast Name: " + LName);
+		System.out.println("\nClass1: " + Class1);
+		System.out.println("\nClass2: " + Class2);
+		System.out.println("\nClass3: " + Class3);
+		System.out.println("\nClass4: " + Class4);
+		System.out.println("\nClass5: " + Class5);
+		System.out.println("\nClass6: " + Class6);
+		System.out.println("\nClass7: " + Class7);
+		System.out.println("\nClass8: " + Class8);
+		System.out.println("\nClass9: " + Class9);
+		System.out.println("\nClass10: " + Class10);
+		System.out.println("\nClass11: " + Class11);
+		System.out.println("\nClass12: " + Class12);
+		System.out.println("\nClass13: " + Class13);
+		System.out.println("\nClass14: " + Class14);
+		System.out.println("\nClass15: " + Class15);
+	}
+	
+	public void pfile() {
+		System.out.println(EmployeeID);
 		System.out.println(FName);
 		System.out.println(LName);
 		System.out.println(Class1);
