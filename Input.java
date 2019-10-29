@@ -39,17 +39,17 @@ public class Input {
 		Scanner reader = new Scanner(System.in);  // Reading from System.in
 		System.out.println("Input for EmployeeID" );
 		infoID = reader.nextLine();
-		System.out.println("Input for FName" );
+		System.out.println("Input for First Name: " );
 		infoFN = reader.nextLine();
-		System.out.println("Input for LName" );
+		System.out.println("Input for Last Name: " );
 		infoLN = reader.nextLine();
 		System.out.println("Input expiring date for Class One: ");
 		info1 = reader.nextLine();
-		System.out.println("Input for Class2" );
+		System.out.println("Input for Class Two: ");
 		info2 = reader.nextLine();
-		System.out.println("Input for Class3" );
+		System.out.println("Input for Class Three: ");
 		info3 = reader.nextLine();
-		System.out.println("Input for Class4" );
+		System.out.println("Input for Class Four: ");
 		info4 = reader.nextLine();
 		System.out.println("Input for Class5" );
 		info5 = reader.nextLine();
