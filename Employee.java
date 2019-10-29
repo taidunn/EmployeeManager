@@ -228,7 +228,7 @@ public class Employee implements Serializable {
 		System.out.println("\nClass15: " + Class15);
 	}
 	
-	public void pfile() {
+	/*public void pfile() {
 		System.out.println(EmployeeID);
 		System.out.println(FName);
 		System.out.println(LName);
@@ -247,7 +247,7 @@ public class Employee implements Serializable {
 		System.out.println(Class13);
 		System.out.println(Class14);
 		System.out.println(Class15);
-	}
+	}*/
 	
 	
 }
