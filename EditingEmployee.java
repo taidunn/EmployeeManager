@@ -15,7 +15,7 @@ public class EditingEmployee {
 		for(int i = 0;i < employeeList.size(); i++) {
 			if (holdplace.equals(employeeList.get(i).getEmployeeId())) {
 				temp = employeeList.get(i);
-				System.out.print("Found");
+				//System.out.print("Found");
 				break;
 			}
 		}
@@ -34,14 +34,19 @@ public class EditingEmployee {
 				+ "\n7 - Class5"
 				+ "\n8 - Class6"
 				+ "\n9 - Class7"
-				+ "\n10 - Class9"
-				+ "\n11 - Class10"
-				+ "\n12 - Class11"
-				+ "\n13 - Class12"
-				+ "\n14 - Class13"
-				+ "\n15 - Class14"
-				+ "\n16 - Class15");
+				+ "\n10 - Class8"
+				+ "\n11 - Class9"
+				+ "\n12 - Class10"
+				+ "\n13 - Class11"
+				+ "\n14 - Class12"
+				+ "\n15 - Class13"
+				+ "\n16 - Class14"
+				+ "\n17 - Class15");
 		editcase = reader.nextInt();
+		
+		if (editcase < 18 && editcase > 2) {
+			System.out.println("***Please type ALL dates in yyyy-MM-dd format!***\n");
+		}
 		
 		switch (editcase) {
 		
