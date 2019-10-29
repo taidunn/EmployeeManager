@@ -5,7 +5,7 @@ public class DeleteEmployee {
 	private static String holdplace;
 	private static int editcase;
 	private static String yorn;
-	
+	private Employee hold = null;
 	
 	public void DeleteEmployee(ArrayList<Employee> employeeList) {
 		Scanner reader = new Scanner(System.in);  // Reading from System.in
@@ -17,7 +17,8 @@ public class DeleteEmployee {
 		for(int i = 0;i < employeeList.size(); i++) {
 			if (holdplace.equals(employeeList.get(i).getEmployeeId())) {
 				temp = employeeList.get(i);
-				System.out.print("Found");
+				hold = employeeList.get(i);
+				//System.out.print("Found");
 				break;
 			}
 		}
@@ -27,10 +28,11 @@ public class DeleteEmployee {
 		}
 		
 		System.out.println("Are you sure you'd like to delete this employee Yes or No");
-		yorn = reader.nextLine();
+		yorn = reader.nextLine().toUpperCase();
 		
-		if (yorn.equals("Y")) {
+		if (yorn.equals("Y") || yorn.equals("YES")) {
 			employeeList.remove(temp);
+			System.out.println(hold.getFName() + " " + hold.getLName() + "(EmployeeID " + hold.getEmployeeId() + ")" + " has been deleted!");
 		}
 	}
 }
