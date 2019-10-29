@@ -26,12 +26,18 @@ public class DateComparison {
         Date date14 = null;
         Date date15 = null;
         Date date16 = null;
+        String First = null;
+        String Last = null;
+        String Full = null;
 
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         Date date1 = sdf.parse(LocalInformation);
         try {
             for (int i = 0; i < employeeList.size(); i++) {
-                employeeList.get(i).print();
+                //employeeList.get(i).print();
+            	First = (employeeList.get(i).getFName());
+            	Last = (employeeList.get(i).getLName());
+            	Full = (First + " " + Last + "'s ");
                 date2 = sdf.parse(employeeList.get(i).getClass1());
                 date3 = sdf.parse(employeeList.get(i).getClass2());
 //                date4 = sdf.parse(employeeList.get(i).getClass3());
@@ -53,27 +59,27 @@ public class DateComparison {
                     long difference = (date1.getTime() - date2.getTime()) / 86400000;
                     int days = (int) Math.abs(difference);
                     if (days <= 30) {
-                        System.out.println("\n**Class1 is expiring in " + days + " days.**");
+                        System.out.println("\n**" + Full + "Class1 is expiring in " + days + " days.**");
                     }
                     //System.out.println(days);
                 }
                 else {
                     long difference = (date1.getTime() - date2.getTime()) / 86400000;
                     int days = (int) Math.abs(difference);
-                	System.out.println("\n***Class1 has been expired for " + days + " days.***");
+                	System.out.println("\n***" + Full + "Class1 has been expired for " + days + " days.***");
                 }
                 if (date1.compareTo(date3) < 0) {
                     long difference = (date1.getTime() - date3.getTime()) / 86400000;
                     int days = (int) Math.abs(difference);
                     if (days <= 30) {
-                        System.out.println("\n**Class2 is expiring in " + days + " days.**");
+                        System.out.println("\n**" + Full + "Class2 is expiring in " + days + " days.**");
                     }
                     //System.out.println(days);
                 }
                 else {
                     long difference = (date1.getTime() - date3.getTime()) / 86400000;
                     int days = (int) Math.abs(difference);
-                	System.out.println("\n***Class2 has been expired for " + days + " days.***\n");
+                	System.out.println("\n***" + Full + "Class2 has been expired for " + days + " days.***\n");
                 }
             }
             
