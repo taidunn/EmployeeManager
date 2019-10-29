@@ -5,7 +5,7 @@ public class Disclaimer {
 	public Disclaimer() {
 		
 	}
-    public void unknown() {
+    public void License() {
         try {
             FileReader reader = new FileReader("disclaimer.txt");
             int character;
