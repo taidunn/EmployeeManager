@@ -20,11 +20,17 @@ public class RunningClass {
 	public static void main(String[] args) throws IOException, ParseException {
 //		LatencyHelp progress = new LatencyHelp();
 //		progress.bar();
+		
+		//This will run set up the discalimer to run.
 		Disclaimer disclaimer1 = new Disclaimer();
-		disclaimer1.unknown();
+		//Here the disclaimer will actually run when the License() class is ran.
+		disclaimer1.License();
 		
-		
+		//This will run the date at after the disclaimer runs.
 		Date date1 = new Date();
+		
+		System.out.println("***Please type ALL dates in yyyy-MM-dd format!***\n");
+		
 		Input askForInput = new Input();
 		EditingEmployee editEmployee = new EditingEmployee();
 		DeleteEmployee deleteEmployee = new DeleteEmployee();
@@ -36,12 +42,12 @@ public class RunningClass {
 		
 		try {
        	 
-            FileInputStream fileIn = new FileInputStream("output.txt");
+            FileInputStream fileIn = new FileInputStream("src/output.txt");
             ObjectInputStream objectIn = new ObjectInputStream(fileIn);
  
             employeeList = (ArrayList<Employee>) objectIn.readObject();
  
-            System.out.println("The Object has been read from the file");
+            //System.out.println("The Object has been read from the file");
             objectIn.close();
  
         } catch (Exception ex) {
@@ -74,6 +80,7 @@ public class RunningClass {
 			//Edit Employee
 			editEmployee.EditingEmployee(employeeList);
 			System.out.println(mainInfo);
+			break;
 		case 3:
 			//Print Table
 			//promptForInput();
@@ -93,9 +100,11 @@ public class RunningClass {
 			//This will check for expiring classes
 			DateComparison compdate = new DateComparison();
 			compdate.DateComparison(employeeList);
+			break;
 		case 6:
+			//Saves to the file "output.txt".
 			try {
-				FileOutputStream fileOut = new FileOutputStream("output.txt");
+				FileOutputStream fileOut = new FileOutputStream("src/output.txt");
 				ObjectOutputStream objectOut = new ObjectOutputStream(fileOut);
 	            objectOut.writeObject(employeeList);
 	            objectOut.close();
@@ -103,10 +112,11 @@ public class RunningClass {
 	        } catch (Exception ex) {
 	            ex.printStackTrace();
 	        }
+			break;
 		default:
 			break;
 			}
-		}while(num < 5 && num > 0);
+		}while(num < 7 && num > 0);
 
 	}
 }
