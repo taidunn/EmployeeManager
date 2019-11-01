@@ -1,7 +1,7 @@
 import java.io.Serializable;
 import java.time.LocalDate; //Importing the current date at application running point.
 
-public class Employee implements Serializable {
+public class OldEmployee implements Serializable {
 	private String EmployeeID;
 	private String FName;
 	private String LName;
