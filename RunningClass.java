@@ -17,7 +17,7 @@ public class RunningClass {
 	private static String mainInfo;
 
 
-	public static void main(String[] args) throws IOException, ParseException {
+	public static void main(String[] args) throws Exception {
 //		LatencyHelp progress = new LatencyHelp();
 //		progress.bar();
 		
@@ -63,7 +63,10 @@ public class RunningClass {
 					+ "\n3 - Print the Table "
 					+ "\n4 - Delete/Hide an Employee "
 					+ "\n5 - Will check for expiring or expired classes"
-					+ "\n6 - Write to the file.. If you don't do this your progress will be lost!");
+					+ "\n6 - Write to the file.. If you don't do this your progress will be lost!"
+					+ "\n7 - Write to the spreadsheet"
+					+ "\n8 - Close the program"
+					+ "\nAnything else will shut the program down.");
 		num = askForInput.promptForInput();
 		//promptForInput();
 		//mainInfo = askForInput.promptForString();
@@ -74,12 +77,12 @@ public class RunningClass {
 			//Make a new employee
 			//Run the class for this
 			mainInfo = askForInput.promptForString(employeeList);
-			System.out.println(mainInfo);
+			//System.out.println(mainInfo);
 			break;
 		case 2:
 			//Edit Employee
 			editEmployee.EditingEmployee(employeeList);
-			System.out.println(mainInfo);
+			//System.out.println(mainInfo);
 			break;
 		case 3:
 			//Print Table
@@ -113,10 +116,15 @@ public class RunningClass {
 	            ex.printStackTrace();
 	        }
 			break;
+		case 7:
+			WriteExcelMain excel = new WriteExcelMain();
+			excel.writeFileUsingPOI(employeeList);
+		case 8:
+			System.exit(4);
 		default:
-			break;
+			throw new Exception("You entered " + num + " which is an invalid character");
 			}
-		}while(num < 7 && num > 0);
+		}while(num < 9 && num > 0);
 
 	}
 }
