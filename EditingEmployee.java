@@ -25,23 +25,23 @@ public class EditingEmployee {
 		}
 		
 		System.out.println("What would you like to edit? "
-				+ "\n1 - First Name: "
+				+ "\n1 - First Name:"
 				+ "\n2 - Last Name:"
-				+ "\n3 - Class1"
-				+ "\n4 - Class2"
-				+ "\n5 - Class3"
-				+ "\n6 - Class4"
-				+ "\n7 - Class5"
-				+ "\n8 - Class6"
-				+ "\n9 - Class7"
-				+ "\n10 - Class8"
-				+ "\n11 - Class9"
-				+ "\n12 - Class10"
-				+ "\n13 - Class11"
-				+ "\n14 - Class12"
-				+ "\n15 - Class13"
-				+ "\n16 - Class14"
-				+ "\n17 - Class15");
+				+ "\n3 - Class1:"
+				+ "\n4 - Class2:"
+				+ "\n5 - Class3:"
+				+ "\n6 - Class4:"
+				+ "\n7 - Class5:"
+				+ "\n8 - Class6:"
+				+ "\n9 - Class7:"
+				+ "\n10 - Class8:"
+				+ "\n11 - Class9:"
+				+ "\n12 - Class10:"
+				+ "\n13 - Class11:"
+				+ "\n14 - Class12:"
+				+ "\n15 - Class13:"
+				+ "\n16 - Class14:"
+				+ "\n17 - Class15:");
 		editcase = reader.nextInt();
 		
 		if (editcase < 18 && editcase > 2) {
