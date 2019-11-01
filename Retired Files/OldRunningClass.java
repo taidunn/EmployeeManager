@@ -11,7 +11,7 @@ import java.awt.RenderingHints;
 import java.awt.image.BufferedImage;
 
 
-public class RunningClass {
+public class OldRunningClass {
 	
 	private static int num;
 	private static String mainInfo;
