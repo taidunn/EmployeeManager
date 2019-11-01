@@ -43,6 +43,11 @@ public class Input {
 		infoFN = reader.nextLine();
 		System.out.println("Input for Last Name: " );
 		infoLN = reader.nextLine();
+		/*=============================================================================*/
+		/*Below is just a friendly reminder before entering all the class info to enter
+		details in year-MONTH-date (yyyy-MM-dd) format.*/
+		System.out.println("***Please type ALL dates in yyyy-MM-dd format!***\n");
+		/*=============================================================================*/
 		System.out.println("Input expiring date for Class One: ");
 		info1 = reader.nextLine();
 		System.out.println("Input for Class Two: ");
