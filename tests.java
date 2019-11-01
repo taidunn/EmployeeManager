@@ -1,4 +1,4 @@
-/*public class tests {
+/*public class test {
 	    public static void main(String[] args) {
 	        char[] animationChars = new char[]{'|', '/', '-', '\\'};
 
@@ -18,7 +18,7 @@
 
 /*import java.io.*;
 
-public class tests {
+public class test {
     public static void main(String[] argv) throws Exception{
       System.out.println("Rotating progress bar");
       ProgressBarRotating pb1 = new ProgressBarRotating();
