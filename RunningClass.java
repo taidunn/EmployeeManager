@@ -11,6 +11,8 @@ import java.awt.RenderingHints;
 import java.awt.image.BufferedImage;
 
 
+
+
 public class RunningClass {
 	
 	private static int num;
@@ -29,6 +31,8 @@ public class RunningClass {
 		//This will run the date at after the disclaimer runs.
 		Date date1 = new Date();
 		
+		
+		
 		System.out.println("***Please type ALL dates in yyyy-MM-dd format!***\n");
 		
 		Input askForInput = new Input();
@@ -39,6 +43,7 @@ public class RunningClass {
 
 	//	BufferedReader  bufReader = new BufferedReader(new FileReader("output.txt"));
 		ArrayList<Employee> employeeList = new ArrayList<>();
+//		ArrayList<String> header = createHeaders();
 		
 		try {
        	 
@@ -54,6 +59,14 @@ public class RunningClass {
             ex.printStackTrace();
         }
 		
+		System.out.println("=============================================================================================");
+		System.out.println("                      **** The Following Classes Are Expired/Expring ****                    "); 
+		DateComparison compdate = new DateComparison();
+		compdate.DateComparison(employeeList);
+		System.out.println("=============================================================================================\n");
+
+		
+		System.out.println("***Please type ALL dates in yyyy-MM-dd format!***\n");
 		
 		Scanner reader = new Scanner(System.in);  // Reading from System.in
 		do {
@@ -86,13 +99,30 @@ public class RunningClass {
 			break;
 		case 3:
 			//Print Table
-			//promptForInput();
-			//System.out.println("EmployeeID || ");
-			System.out.print("EmployeeID || First Name || Last Name || Class1 ||  || Class2 ||  || Class3 ||  || Class4 ||  || Class5 ||  || Class6 ||  || Class7 ||  || Class8 ||  || Class9 ||  || Class10 ||  || Class11 ||  || Class12 ||  || Class13 ||  || Class14 ||  || Class15 ||");
-			for(int i = 0;i < employeeList.size();i++) {
-				employeeList.get(i).print();
-			}
-			//System.out.println(employeeList);
+	        printf st = new printf();
+	        st.setShowVerticalLines(true);//if false (default) then no vertical lines are shown
+	        st.setHeaders("EmployeeID", "First Name", "Last Name", "Class1", "Class2", "Class3", "Class4", "Class5", "Class6", "Class7", "Class8", "Class9", "Class10", "Class11", "Class12", "Class13", "Class14", "Class15");
+	        for(Employee employee : employeeList ) {
+		        st.addRow(employee.getEmployeeId(), 
+		        		employee.getFName(), 
+		        		employee.getLName(), 
+		        		employee.getClass1(), 
+		        		employee.getClass2(), 
+		        		employee.getClass3(), 
+		        		employee.getClass4(), 
+		        		employee.getClass5(), 
+		        		employee.getClass6(), 
+		        		employee.getClass7(), 
+		        		employee.getClass8(), 
+		        		employee.getClass9(), 
+		        		employee.getClass10(), 
+		        		employee.getClass11(), 
+		        		employee.getClass12(),
+		        		employee.getClass13(), 
+		        		employee.getClass14(), 
+		        		employee.getClass15());	
+	        }
+	        st.print();
 			break;
 		case 4:
 			//Delete/Hide User 
@@ -102,8 +132,12 @@ public class RunningClass {
 		case 5:
 			//INCOMPLETE
 			//This will check for expiring classes
-			DateComparison compdate = new DateComparison();
+//			DateComparison compdate = new DateComparison();
+			System.out.println("=============================================================================================");
+			System.out.println("                      **** The Following Classes Are Expired/Expring ****                    "); 
 			compdate.DateComparison(employeeList);
+			System.out.println("=============================================================================================");
+
 			break;
 		case 6:
 			//Saves to the file "output.txt".
@@ -128,5 +162,31 @@ public class RunningClass {
 			}
 		}while(num < 9 && num > 0);
 
+	}
+
+
+	private static ArrayList<String> createHeaders() {
+		ArrayList<String> headers = new ArrayList();
+		headers.add("EmployeeID");
+		headers.add("First Name");
+		headers.add("Last Name");
+		headers.add("Class1");
+		headers.add("Class2");
+		headers.add("Class3");
+		headers.add("Class4");
+		headers.add("Class5");
+		headers.add("Class6");
+		headers.add("Class7");
+		headers.add("Class8");
+		headers.add("Class9");
+		headers.add("Class10");
+		headers.add("Class11");
+		headers.add("Class12");
+		headers.add("Class13");
+		headers.add("Class14");
+		headers.add("Class15");
+		
+		
+		return headers;
 	}
 }
