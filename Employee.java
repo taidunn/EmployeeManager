@@ -1,4 +1,5 @@
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate; //Importing the current date at application running point.
 
 public class Employee implements Serializable {
@@ -207,6 +208,12 @@ public class Employee implements Serializable {
 		this.Class15 = Class15;
 	}
 	
+	public String newDate(java.util.Date date2) {
+    	String newstring = new SimpleDateFormat("yyyy-MM-dd").format(date2);
+    	//System.out.println(newstring); // 2011-01-18
+    	return newstring;
+	}
+	
 	public void print() {
 		System.out.print("\n" + EmployeeID + " || ");
 		System.out.print(FName + " || ");
@@ -228,26 +235,27 @@ public class Employee implements Serializable {
 		System.out.print(Class15 + " || ");
 	}
 	
-	/*public void pfile() {
-		System.out.println(EmployeeID);
-		System.out.println(FName);
-		System.out.println(LName);
-		System.out.println(Class1);
-		System.out.println(Class2);
-		System.out.println(Class3);
-		System.out.println(Class4);
-		System.out.println(Class5);
-		System.out.println(Class6);
-		System.out.println(Class7);
-		System.out.println(Class8);
-		System.out.println(Class9);
-		System.out.println(Class10);
-		System.out.println(Class11);
-		System.out.println(Class12);
-		System.out.println(Class13);
-		System.out.println(Class14);
-		System.out.println(Class15);
-	}*/
+//	public void pfile() {
+//		System.out.printf("%-10s%-10d%-10c%-10f\\n", EmployeeID, FName, LName, Class1, Class2, Class3, Class4, Class5, Class6, Class7, Class8, Class9, Class10, Class11, Class12, Class13, Class14, Class15);
+//		System.out.println(EmployeeID);
+//		System.out.println(FName);
+//		System.out.println(LName);
+//		System.out.println(Class1);
+//		System.out.println(Class2);
+//		System.out.println(Class3);
+//		System.out.println(Class4);
+//		System.out.println(Class5);
+//		System.out.println(Class6);
+//		System.out.println(Class7);
+//		System.out.println(Class8);
+//		System.out.println(Class9);
+//		System.out.println(Class10);
+//		System.out.println(Class11);
+//		System.out.println(Class12);
+//		System.out.println(Class13);
+//		System.out.println(Class14);
+//		System.out.println(Class15);
+//	}
 	
 	
 }
