@@ -16,12 +16,15 @@ import java.awt.image.BufferedImage;
 public class RunningClass {
 	
 	private static int num;
+	private static int allorspec;
 	private static String mainInfo;
 
 
 	public static void main(String[] args) throws Exception {
 //		LatencyHelp progress = new LatencyHelp();
 //		progress.bar();
+		
+		Banner banner = new Banner();
 		
 		//This will run set up the discalimer to run.
 		Disclaimer disclaimer1 = new Disclaimer();
@@ -38,6 +41,7 @@ public class RunningClass {
 		Input askForInput = new Input();
 		EditingEmployee editEmployee = new EditingEmployee();
 		DeleteEmployee deleteEmployee = new DeleteEmployee();
+		SpecificComparison specComp = new SpecificComparison();
 		
      
 
@@ -132,12 +136,24 @@ public class RunningClass {
 		case 5:
 			//INCOMPLETE
 			//This will check for expiring classes
-//			DateComparison compdate = new DateComparison();
-			System.out.println("=============================================================================================");
-			System.out.println("                      **** The Following Classes Are Expired/Expring ****                    "); 
-			compdate.DateComparison(employeeList);
-			System.out.println("=============================================================================================");
-
+			System.out.println("\nWould you like to run a check on all or a specific employee?"
+					+ "\n1 - Run on all employees. "
+					+ "\n2 - Run on a specific employee. "
+					+ "\nAnything else will shut the program down.");
+			allorspec = askForInput.promptForInput();
+			switch (allorspec) {
+			case 1: 
+				System.out.println("=============================================================================================");
+				System.out.println("                      **** The Following Classes Are Expired/Expring ****                    "); 
+				compdate.DateComparison(employeeList);
+				System.out.println("=============================================================================================");
+				break;
+			case 2:
+				specComp.SpecificComparison(employeeList);
+				break;
+			default: 
+				break;
+			}
 			break;
 		case 6:
 			//Saves to the file "output.txt".
@@ -157,10 +173,17 @@ public class RunningClass {
 			break;
 		case 8:
 			System.exit(4);
+		case 9:
+			System.out.println("=============================================================================================");
+			System.out.println("                             **** TEST FUNCTION NOT FOR USE ****                             "); 
+			System.out.println("=============================================================================================");
+			WriteExcelMain2 excel2 = new WriteExcelMain2();
+			excel2.writeFileUsingPOI(employeeList);
+			break;
 		default:
 			throw new Exception("You entered " + num + " which is an invalid character");
 			}
-		}while(num < 9 && num > 0);
+		}while(num < 10 && num > 0);
 
 	}
 
