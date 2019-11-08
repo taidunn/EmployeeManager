@@ -31,17 +31,23 @@ public class Input {
 	
 	public int promptForInput() {
 		Scanner reader = new Scanner(System.in);  // Reading from System.in
-		System.out.println("Enter a number: ");
+		System.out.println("Enter a number: \n");
 		num = reader.nextInt();
 		return num;
 	}
 	public String promptForString(ArrayList<Employee> employeeList) {
 		Scanner reader = new Scanner(System.in);  // Reading from System.in
-		System.out.println("Input for EmployeeID" );
+		System.out.println("Input for EmployeeID: ");
 		infoID = reader.nextLine();
-		System.out.println("Input for First Name: " );
+		for(int i = 0;i < employeeList.size();i++) {
+			if(infoID.compareTo(employeeList.get(i).getEmployeeId())== 0 ) {
+				System.out.print("EmployeeID " + infoID + " already exists.\n");
+				return infoID;
+			}
+		}
+		System.out.println("Input for First Name: ");
 		infoFN = reader.nextLine();
-		System.out.println("Input for Last Name: " );
+		System.out.println("Input for Last Name: ");
 		infoLN = reader.nextLine();
 		/*=============================================================================*/
 		/*Below is just a friendly reminder before entering all the class info to enter
@@ -56,27 +62,27 @@ public class Input {
 		info3 = reader.nextLine();
 		System.out.println("Input for Class Four: ");
 		info4 = reader.nextLine();
-		System.out.println("Input for Class5" );
+		System.out.println("Input for Class Five: ");
 		info5 = reader.nextLine();
-		System.out.println("Input for Class6" );
+		System.out.println("Input for Class Six: ");
 		info6 = reader.nextLine();
-		System.out.println("Input for Class7" );
+		System.out.println("Input for Class Seven: ");
 		info7 = reader.nextLine();
-		System.out.println("Input for Class8" );
+		System.out.println("Input for Class Eight: ");
 		info8 = reader.nextLine();
-		System.out.println("Input for Class9" );
+		System.out.println("Input for Class Nine: ");
 		info9 = reader.nextLine();
-		System.out.println("Input for Class10" );
+		System.out.println("Input for Class Ten: ");
 		info10 = reader.nextLine();
-		System.out.println("Input for Class11" );
+		System.out.println("Input for Class Eleven: ");
 		info11 = reader.nextLine();
-		System.out.println("Input for Class12" );
+		System.out.println("Input for Class Twelve: ");
 		info12 = reader.nextLine();
-		System.out.println("Input for Class13" );
+		System.out.println("Input for Class Thirteen: ");
 		info13 = reader.nextLine();
-		System.out.println("Input for Class14" );
+		System.out.println("Input for Class Fourteen: ");
 		info14 = reader.nextLine();
-		System.out.println("Input for Class15" );
+		System.out.println("Input for Class Fiveteen: ");
 		info15 = reader.nextLine();
 		
 		//Placeholder Class1 = new Placeholder(info1, info2);
