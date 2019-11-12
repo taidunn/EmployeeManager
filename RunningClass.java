@@ -168,22 +168,34 @@ public class RunningClass {
 	        }
 			break;
 		case 7:
-			WriteExcelMain excel = new WriteExcelMain();
-			excel.writeFileUsingPOI(employeeList);
+			System.out.println("\nWould you like to generate a normal or advanced spreadsheet?"
+					+ "\n1 - Create normal spreadsheet. "
+					+ "\n2 - Create advanced spreadsheet. "
+					+ "\nAnything else will shut the program down.");
+			allorspec = askForInput.promptForInput();
+			switch (allorspec) {
+			case 1: 
+				WriteExcelMain excel = new WriteExcelMain();
+				excel.writeFileUsingPOI(employeeList);
+				break;
+			case 2:
+				System.out.println("=============================================================================================");
+				System.out.println("                             **** TEST FUNCTION NOT FOR USE ****                             "); 
+				System.out.println("=============================================================================================");
+				WriteExcelMain2 excel2 = new WriteExcelMain2();
+				excel2.writeFileUsingPOI(employeeList);
+				System.out.println("=============================================================================================");
+				break;
+			default: 
+				break;
+			}
 			break;
 		case 8:
 			System.exit(4);
-		case 9:
-			System.out.println("=============================================================================================");
-			System.out.println("                             **** TEST FUNCTION NOT FOR USE ****                             "); 
-			System.out.println("=============================================================================================");
-			WriteExcelMain2 excel2 = new WriteExcelMain2();
-			excel2.writeFileUsingPOI(employeeList);
-			break;
 		default:
 			throw new Exception("You entered " + num + " which is an invalid character");
 			}
-		}while(num < 10 && num > 0);
+		}while(num < 9 && num > 0);
 
 	}
 
