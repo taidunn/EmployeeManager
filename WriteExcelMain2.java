@@ -1,3 +1,4 @@
+import java.awt.Font;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -8,12 +9,14 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Date;
 
+import org.apache.poi.ss.usermodel.BorderStyle;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.ss.usermodel.CreationHelper;
 import org.apache.poi.ss.usermodel.FillPatternType;
 import org.apache.poi.ss.usermodel.IndexedColors;
 import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.xssf.usermodel.XSSFFont;
 import org.apache.poi.xssf.usermodel.XSSFFormulaEvaluator;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -35,7 +38,34 @@ public class WriteExcelMain2 {
   
   int rownum = 0;
   
-	  
+  CellStyle test = workbook.createCellStyle();
+  CreationHelper createHelper = workbook.getCreationHelper();
+  test.setDataFormat(createHelper.createDataFormat().getFormat("dd-mmm-yy"));
+  test.setBorderBottom(BorderStyle.THIN);
+  test.setBorderTop(BorderStyle.THIN);
+  test.setBorderLeft(BorderStyle.THIN);
+  test.setBorderRight(BorderStyle.THIN);
+  XSSFFont font = workbook.createFont();
+  font.setFontHeightInPoints((short)14);
+  font.setBold(true);
+  font.setItalic(false);
+  test.setFont(font);
+  test.setFillForegroundColor(IndexedColors.GREY_25_PERCENT.getIndex());  
+  test.setFillPattern(FillPatternType.SOLID_FOREGROUND);	  
+  
+  
+  CellStyle classNames = workbook.createCellStyle();
+  classNames.setBorderBottom(BorderStyle.THIN);
+  classNames.setBorderTop(BorderStyle.THIN);
+  classNames.setBorderLeft(BorderStyle.THIN);
+  classNames.setBorderRight(BorderStyle.THIN);
+  font = workbook.createFont();
+  font.setFontHeightInPoints((short)11);
+  font.setBold(true);
+  font.setItalic(false);
+  classNames.setFont(font);
+  classNames.setFillForegroundColor(IndexedColors.AQUA.getIndex());  
+  classNames.setFillPattern(FillPatternType.SOLID_FOREGROUND);	 
   
   	Row row = sheet.createRow(rownum++);
 	  
@@ -44,74 +74,88 @@ public class WriteExcelMain2 {
 
 	  
 	  cell = row.createCell(i);
+ 	  cell.setCellStyle(test);
+// 	  cell.setCellStyle();
 	  cell.setCellValue("EmployeeID");
 	  sheet.autoSizeColumn(i);
 	  i++;
 	  cell = row.createCell(i);
-	  cell.setCellValue("First Name");
+ 	  cell.setCellStyle(test);
+	  cell.setCellValue("Name (Last, First)");
 	  sheet.autoSizeColumn(i);
 	  i++;
 	  cell = row.createCell(i);
-	  cell.setCellValue("Last Name");
-	  sheet.autoSizeColumn(i);
-	  i++;
-	  cell = row.createCell(i);
+	  cell.setCellStyle(classNames);
 	  cell.setCellValue("Class1");
 	  sheet.autoSizeColumn(i);
 	  i++;
 	  cell = row.createCell(i);
+	  cell.setCellStyle(classNames);
 	  cell.setCellValue("Class2");
 	  sheet.autoSizeColumn(i);
 	  i++;
 	  cell = row.createCell(i);
+	  cell.setCellStyle(classNames);
 	  cell.setCellValue("Class3");
 	  sheet.autoSizeColumn(i);
 	  i++;
 	  cell = row.createCell(i);
+	  cell.setCellStyle(classNames);
 	  cell.setCellValue("Class4");
 	  sheet.autoSizeColumn(i);
 	  i++;
 	  cell = row.createCell(i);
+	  cell.setCellStyle(classNames);
 	  cell.setCellValue("Class5");
 	  sheet.autoSizeColumn(i);
 	  i++;
 	  cell = row.createCell(i);
+	  cell.setCellStyle(classNames);
 	  cell.setCellValue("Class6");
 	  sheet.autoSizeColumn(i);
 	  i++;
 	  cell = row.createCell(i);
+	  cell.setCellStyle(classNames);
 	  cell.setCellValue("Class7");
 	  sheet.autoSizeColumn(i);
 	  i++;
 	  cell = row.createCell(i);
+	  cell.setCellStyle(classNames);
 	  cell.setCellValue("Class8");
 	  sheet.autoSizeColumn(i);
 	  i++;
 	  cell = row.createCell(i);
+	  cell.setCellStyle(classNames);
 	  cell.setCellValue("Class9");
 	  sheet.autoSizeColumn(i);
 	  i++;
 	  cell = row.createCell(i);
+	  cell.setCellStyle(classNames);
 	  cell.setCellValue("Class10");
 	  sheet.autoSizeColumn(i);
 	  i++;
 	  cell = row.createCell(i);
+	  cell.setCellStyle(classNames);
 	  cell.setCellValue("Class11");
 	  sheet.autoSizeColumn(i);
 	  i++;
 	  cell = row.createCell(i);
+	  cell.setCellStyle(classNames);
 	  cell.setCellValue("Class12");
 	  sheet.autoSizeColumn(i);
 	  i++;
 	  cell = row.createCell(i);
+	  cell.setCellStyle(classNames);
 	  cell.setCellValue("Class13");
 	  sheet.autoSizeColumn(i);
 	  i++;
 	  cell = row.createCell(i);
+	  cell.setCellStyle(classNames);
 	  cell.setCellValue("Class14");
 	  sheet.autoSizeColumn(i);
 	  i++;
 	  cell = row.createCell(i);
+	  cell.setCellStyle(classNames);
 	  cell.setCellValue("Class15");
 	  sheet.autoSizeColumn(i);
 	  i++;
@@ -122,21 +166,36 @@ public class WriteExcelMain2 {
  
    int cellnum = 0;
    CellStyle cellGreen = workbook.createCellStyle();
-   CreationHelper createHelper = workbook.getCreationHelper();
+//   CreationHelper createHelper = workbook.getCreationHelper();
    cellGreen.setDataFormat(createHelper.createDataFormat().getFormat("dd-mmm-yy"));
-   cellGreen.setFillForegroundColor(IndexedColors.GREEN.getIndex());  
+   cellGreen.setBorderBottom(BorderStyle.THIN);
+   cellGreen.setBorderTop(BorderStyle.THIN);
+   cellGreen.setBorderLeft(BorderStyle.THIN);
+   cellGreen.setBorderRight(BorderStyle.THIN);
+   cellGreen.setFillForegroundColor(IndexedColors.SEA_GREEN.getIndex());  
    cellGreen.setFillPattern(FillPatternType.SOLID_FOREGROUND);
    
    CellStyle cellRed = workbook.createCellStyle();
    cellRed.setDataFormat(createHelper.createDataFormat().getFormat("dd-mmm-yy"));
+   cellRed.setBorderBottom(BorderStyle.THIN);
+   cellRed.setBorderTop(BorderStyle.THIN);
+   cellRed.setBorderLeft(BorderStyle.THIN);
+   cellRed.setBorderRight(BorderStyle.THIN);
    cellRed.setFillForegroundColor(IndexedColors.RED.getIndex());  
    cellRed.setFillPattern(FillPatternType.SOLID_FOREGROUND);
    
    CellStyle cellOrange = workbook.createCellStyle();
    cellOrange.setDataFormat(createHelper.createDataFormat().getFormat("dd-mmm-yy"));
-   cellOrange.setFillForegroundColor(IndexedColors.ORANGE.getIndex());  
+   cellOrange.setBorderBottom(BorderStyle.THIN);
+   cellOrange.setBorderTop(BorderStyle.THIN);
+   cellOrange.setBorderLeft(BorderStyle.THIN);
+   cellOrange.setBorderRight(BorderStyle.THIN);
+//   cellOrange.setBottomBorderColor(IndexedColors.WHITE.getIndex());
+//   cellOrange.setTopBorderColor(IndexedColors.WHITE.getIndex());
+//   cellOrange.setLeftBorderColor(IndexedColors.WHITE.getIndex());
+//   cellOrange.setRightBorderColor(IndexedColors.WHITE.getIndex());
+   cellOrange.setFillForegroundColor(IndexedColors.LIGHT_ORANGE.getIndex());  
    cellOrange.setFillPattern(FillPatternType.SOLID_FOREGROUND);
-   
    LocalDateTime myDateObj = LocalDateTime.now();
    DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("yyyy-MM-dd");
    String LocalInformation = myDateObj.format(myFormatObj);
@@ -168,7 +227,7 @@ public class WriteExcelMain2 {
        	first = (person.getFName());
        	last = (person.getLName());
        	id = (person.getEmployeeId());
-       	full = (first + " " + last + "'s (" + id + ") ");
+       	full = (last + ", " + first);
            date1 = sdf.parse(person.getClass1());
            date2 = sdf.parse(person.getClass2());
            date3 = sdf.parse(person.getClass3());
@@ -191,17 +250,23 @@ public class WriteExcelMain2 {
          sheet.autoSizeColumn(cellnum);
          cellnum++;
          
-         //Entering for First Name
+         //Entering for Full Name
          cell = row.createCell(cellnum);
-         cell.setCellValue(person.getFName());
+         cell.setCellValue(full);
          sheet.autoSizeColumn(cellnum);
          cellnum++;
          
-         //Entering for Last Name
-         cell = row.createCell(cellnum);
-         cell.setCellValue(person.getLName());
-         sheet.autoSizeColumn(cellnum);
-         cellnum++;
+//         //Entering for First Name
+//         cell = row.createCell(cellnum);
+//         cell.setCellValue(person.getFName());
+//         sheet.autoSizeColumn(cellnum);
+//         cellnum++;
+//         
+//         //Entering for Last Name
+//         cell = row.createCell(cellnum);
+//         cell.setCellValue(person.getLName());
+//         sheet.autoSizeColumn(cellnum);
+//         cellnum++;
          
            //Class1
            if (mainDate.compareTo(date1) < 0) {
@@ -212,7 +277,7 @@ public class WriteExcelMain2 {
             	   //The color will be orange.
              	    cell = row.createCell(cellnum);
                	    cell.setCellStyle(cellOrange);
-               	    cell.setCellValue(person.getClass1());
+               	    cell.setCellValue(date1);
                	    sheet.autoSizeColumn(cellnum);
                	    cellnum++;
                }
@@ -221,7 +286,7 @@ public class WriteExcelMain2 {
             	   //This color will be green.
               	    cell = row.createCell(cellnum);
                	    cell.setCellStyle(cellGreen);
-               	    cell.setCellValue(person.getClass1());
+               	    cell.setCellValue(date1);
                	    sheet.autoSizeColumn(cellnum);
                	    cellnum++;
                }
@@ -232,7 +297,7 @@ public class WriteExcelMain2 {
                //This color will be red.
          	    cell = row.createCell(cellnum);
            	    cell.setCellStyle(cellRed);
-           	    cell.setCellValue(person.getClass1());
+           	    cell.setCellValue(date1);
            	    sheet.autoSizeColumn(cellnum);
            	    cellnum++;
            }
@@ -246,7 +311,7 @@ public class WriteExcelMain2 {
             	   //The color will be orange.
              	    cell = row.createCell(cellnum);
                	    cell.setCellStyle(cellOrange);
-               	    cell.setCellValue(person.getClass2());
+               	    cell.setCellValue(date2);
                	    sheet.autoSizeColumn(cellnum);
                	    cellnum++;
                }
@@ -255,7 +320,7 @@ public class WriteExcelMain2 {
             	   //This color will be green.
               	    cell = row.createCell(cellnum);
                	    cell.setCellStyle(cellGreen);
-               	    cell.setCellValue(person.getClass2());
+               	    cell.setCellValue(date2);
                	    sheet.autoSizeColumn(cellnum);
                	    cellnum++;
                }
@@ -266,7 +331,7 @@ public class WriteExcelMain2 {
                //This color will be red.
          	    cell = row.createCell(cellnum);
            	    cell.setCellStyle(cellRed);
-           	    cell.setCellValue(person.getClass2());
+           	    cell.setCellValue(date2);
            	    sheet.autoSizeColumn(cellnum);
            	    cellnum++;
            }
@@ -280,7 +345,7 @@ public class WriteExcelMain2 {
             	   //The color will be orange.
              	    cell = row.createCell(cellnum);
                	    cell.setCellStyle(cellOrange);
-               	    cell.setCellValue(person.getClass3());
+               	    cell.setCellValue(date3);
                	    sheet.autoSizeColumn(cellnum);
                	    cellnum++;
                }
@@ -289,7 +354,7 @@ public class WriteExcelMain2 {
             	   //This color will be green.
               	    cell = row.createCell(cellnum);
                	    cell.setCellStyle(cellGreen);
-               	    cell.setCellValue(person.getClass3());
+               	    cell.setCellValue(date3);
                	    sheet.autoSizeColumn(cellnum);
                	    cellnum++;
                }
@@ -300,7 +365,7 @@ public class WriteExcelMain2 {
                //This color will be red.
          	    cell = row.createCell(cellnum);
            	    cell.setCellStyle(cellRed);
-           	    cell.setCellValue(person.getClass3());
+           	    cell.setCellValue(date3);
            	    sheet.autoSizeColumn(cellnum);
            	    cellnum++;
            }
@@ -314,7 +379,7 @@ public class WriteExcelMain2 {
             	   //The color will be orange.
              	    cell = row.createCell(cellnum);
                	    cell.setCellStyle(cellOrange);
-               	    cell.setCellValue(person.getClass4());
+               	    cell.setCellValue(date4);
                	    sheet.autoSizeColumn(cellnum);
                	    cellnum++;
                }
@@ -323,7 +388,7 @@ public class WriteExcelMain2 {
             	   //This color will be green.
               	    cell = row.createCell(cellnum);
                	    cell.setCellStyle(cellGreen);
-               	    cell.setCellValue(person.getClass4());
+               	    cell.setCellValue(date4);
                	    sheet.autoSizeColumn(cellnum);
                	    cellnum++;
                }
@@ -334,7 +399,7 @@ public class WriteExcelMain2 {
                //This color will be red.
          	    cell = row.createCell(cellnum);
            	    cell.setCellStyle(cellRed);
-           	    cell.setCellValue(person.getClass4());
+           	    cell.setCellValue(date4);
            	    sheet.autoSizeColumn(cellnum);
            	    cellnum++;
            }
@@ -348,7 +413,7 @@ public class WriteExcelMain2 {
             	   //The color will be orange.
              	    cell = row.createCell(cellnum);
                	    cell.setCellStyle(cellOrange);
-               	    cell.setCellValue(person.getClass5());
+               	    cell.setCellValue(date5);
                	    sheet.autoSizeColumn(cellnum);
                	    cellnum++;
                }
@@ -357,7 +422,7 @@ public class WriteExcelMain2 {
             	   //This color will be green.
               	    cell = row.createCell(cellnum);
                	    cell.setCellStyle(cellGreen);
-               	    cell.setCellValue(person.getClass5());
+               	    cell.setCellValue(date5);
                	    sheet.autoSizeColumn(cellnum);
                	    cellnum++;
                }
@@ -368,7 +433,7 @@ public class WriteExcelMain2 {
                //This color will be red.
          	    cell = row.createCell(cellnum);
            	    cell.setCellStyle(cellRed);
-           	    cell.setCellValue(person.getClass5());
+           	    cell.setCellValue(date5);
            	    sheet.autoSizeColumn(cellnum);
            	    cellnum++;
            }
@@ -382,7 +447,7 @@ public class WriteExcelMain2 {
             	   //The color will be orange.
              	    cell = row.createCell(cellnum);
                	    cell.setCellStyle(cellOrange);
-               	    cell.setCellValue(person.getClass6());
+               	    cell.setCellValue(date6);
                	    sheet.autoSizeColumn(cellnum);
                	    cellnum++;
                }
@@ -391,7 +456,7 @@ public class WriteExcelMain2 {
             	   //This color will be green.
               	    cell = row.createCell(cellnum);
                	    cell.setCellStyle(cellGreen);
-               	    cell.setCellValue(person.getClass6());
+               	    cell.setCellValue(date6);
                	    sheet.autoSizeColumn(cellnum);
                	    cellnum++;
                }
@@ -402,7 +467,7 @@ public class WriteExcelMain2 {
                //This color will be red.
          	    cell = row.createCell(cellnum);
            	    cell.setCellStyle(cellRed);
-           	    cell.setCellValue(person.getClass6());
+           	    cell.setCellValue(date6);
            	    sheet.autoSizeColumn(cellnum);
            	    cellnum++;
            }
@@ -416,7 +481,7 @@ public class WriteExcelMain2 {
             	   //The color will be orange.
              	    cell = row.createCell(cellnum);
                	    cell.setCellStyle(cellOrange);
-               	    cell.setCellValue(person.getClass7());
+               	    cell.setCellValue(date7);
                	    sheet.autoSizeColumn(cellnum);
                	    cellnum++;
                }
@@ -425,7 +490,7 @@ public class WriteExcelMain2 {
             	   //This color will be green.
               	    cell = row.createCell(cellnum);
                	    cell.setCellStyle(cellGreen);
-               	    cell.setCellValue(person.getClass7());
+               	    cell.setCellValue(date7);
                	    sheet.autoSizeColumn(cellnum);
                	    cellnum++;
                }
@@ -436,7 +501,7 @@ public class WriteExcelMain2 {
                //This color will be red.
          	    cell = row.createCell(cellnum);
            	    cell.setCellStyle(cellRed);
-           	    cell.setCellValue(person.getClass7());
+           	    cell.setCellValue(date7);
            	    sheet.autoSizeColumn(cellnum);
            	    cellnum++;
            }
@@ -450,7 +515,7 @@ public class WriteExcelMain2 {
             	   //The color will be orange.
              	    cell = row.createCell(cellnum);
                	    cell.setCellStyle(cellOrange);
-               	    cell.setCellValue(person.getClass8());
+               	    cell.setCellValue(date8);
                	    sheet.autoSizeColumn(cellnum);
                	    cellnum++;
                }
@@ -459,7 +524,7 @@ public class WriteExcelMain2 {
             	   //This color will be green.
               	    cell = row.createCell(cellnum);
                	    cell.setCellStyle(cellGreen);
-               	    cell.setCellValue(person.getClass8());
+               	    cell.setCellValue(date8);
                	    sheet.autoSizeColumn(cellnum);
                	    cellnum++;
                }
@@ -470,7 +535,7 @@ public class WriteExcelMain2 {
                //This color will be red.
          	    cell = row.createCell(cellnum);
            	    cell.setCellStyle(cellRed);
-           	    cell.setCellValue(person.getClass8());
+           	    cell.setCellValue(date8);
            	    sheet.autoSizeColumn(cellnum);
            	    cellnum++;
            }
@@ -484,7 +549,7 @@ public class WriteExcelMain2 {
             	   //The color will be orange.
              	    cell = row.createCell(cellnum);
                	    cell.setCellStyle(cellOrange);
-               	    cell.setCellValue(person.getClass9());
+               	    cell.setCellValue(date9);
                	    sheet.autoSizeColumn(cellnum);
                	    cellnum++;
                }
@@ -493,7 +558,7 @@ public class WriteExcelMain2 {
             	   //This color will be green.
               	    cell = row.createCell(cellnum);
                	    cell.setCellStyle(cellGreen);
-               	    cell.setCellValue(person.getClass9());
+               	    cell.setCellValue(date9);
                	    sheet.autoSizeColumn(cellnum);
                	    cellnum++;
                }
@@ -504,7 +569,7 @@ public class WriteExcelMain2 {
                //This color will be red.
          	    cell = row.createCell(cellnum);
            	    cell.setCellStyle(cellRed);
-           	    cell.setCellValue(person.getClass9());
+           	    cell.setCellValue(date9);
            	    sheet.autoSizeColumn(cellnum);
            	    cellnum++;
            }
@@ -518,7 +583,7 @@ public class WriteExcelMain2 {
             	   //The color will be orange.
              	    cell = row.createCell(cellnum);
                	    cell.setCellStyle(cellOrange);
-               	    cell.setCellValue(person.getClass10());
+               	    cell.setCellValue(date10);
                	    sheet.autoSizeColumn(cellnum);
                	    cellnum++;
                }
@@ -527,7 +592,7 @@ public class WriteExcelMain2 {
             	   //This color will be green.
               	    cell = row.createCell(cellnum);
                	    cell.setCellStyle(cellGreen);
-               	    cell.setCellValue(person.getClass10());
+               	    cell.setCellValue(date10);
                	    sheet.autoSizeColumn(cellnum);
                	    cellnum++;
                }
@@ -538,7 +603,7 @@ public class WriteExcelMain2 {
                //This color will be red.
          	    cell = row.createCell(cellnum);
            	    cell.setCellStyle(cellRed);
-           	    cell.setCellValue(person.getClass10());
+           	    cell.setCellValue(date10);
            	    sheet.autoSizeColumn(cellnum);
            	    cellnum++;
            }
@@ -552,7 +617,7 @@ public class WriteExcelMain2 {
             	   //The color will be orange.
              	    cell = row.createCell(cellnum);
                	    cell.setCellStyle(cellOrange);
-               	    cell.setCellValue(person.getClass11());
+               	    cell.setCellValue(date11);
                	    sheet.autoSizeColumn(cellnum);
                	    cellnum++;
                }
@@ -561,7 +626,7 @@ public class WriteExcelMain2 {
             	   //This color will be green.
               	    cell = row.createCell(cellnum);
                	    cell.setCellStyle(cellGreen);
-               	    cell.setCellValue(person.getClass11());
+               	    cell.setCellValue(date11);
                	    sheet.autoSizeColumn(cellnum);
                	    cellnum++;
                }
@@ -572,7 +637,7 @@ public class WriteExcelMain2 {
                //This color will be red.
          	    cell = row.createCell(cellnum);
            	    cell.setCellStyle(cellRed);
-           	    cell.setCellValue(person.getClass11());
+           	    cell.setCellValue(date11);
            	    sheet.autoSizeColumn(cellnum);
            	    cellnum++;
            }
@@ -586,7 +651,7 @@ public class WriteExcelMain2 {
             	   //The color will be orange.
              	    cell = row.createCell(cellnum);
                	    cell.setCellStyle(cellOrange);
-               	    cell.setCellValue(person.getClass12());
+               	    cell.setCellValue(date12);
                	    sheet.autoSizeColumn(cellnum);
                	    cellnum++;
                }
@@ -595,7 +660,7 @@ public class WriteExcelMain2 {
             	   //This color will be green.
               	    cell = row.createCell(cellnum);
                	    cell.setCellStyle(cellGreen);
-               	    cell.setCellValue(person.getClass12());
+               	    cell.setCellValue(date12);
                	    sheet.autoSizeColumn(cellnum);
                	    cellnum++;
                }
@@ -606,7 +671,7 @@ public class WriteExcelMain2 {
                //This color will be red.
          	    cell = row.createCell(cellnum);
            	    cell.setCellStyle(cellRed);
-           	    cell.setCellValue(person.getClass12());
+           	    cell.setCellValue(date12);
            	    sheet.autoSizeColumn(cellnum);
            	    cellnum++;
            }
@@ -620,7 +685,7 @@ public class WriteExcelMain2 {
             	   //The color will be orange.
              	    cell = row.createCell(cellnum);
                	    cell.setCellStyle(cellOrange);
-               	    cell.setCellValue(person.getClass13());
+               	    cell.setCellValue(date13);
                	    sheet.autoSizeColumn(cellnum);
                	    cellnum++;
                }
@@ -629,7 +694,7 @@ public class WriteExcelMain2 {
             	   //This color will be green.
               	    cell = row.createCell(cellnum);
                	    cell.setCellStyle(cellGreen);
-               	    cell.setCellValue(person.getClass13());
+               	    cell.setCellValue(date13);
                	    sheet.autoSizeColumn(cellnum);
                	    cellnum++;
                }
@@ -640,7 +705,7 @@ public class WriteExcelMain2 {
                //This color will be red.
          	    cell = row.createCell(cellnum);
            	    cell.setCellStyle(cellRed);
-           	    cell.setCellValue(person.getClass13());
+           	    cell.setCellValue(date13);
            	    sheet.autoSizeColumn(cellnum);
            	    cellnum++;
            }
@@ -654,7 +719,7 @@ public class WriteExcelMain2 {
             	   //The color will be orange.
              	    cell = row.createCell(cellnum);
                	    cell.setCellStyle(cellOrange);
-               	    cell.setCellValue(person.getClass14());
+               	    cell.setCellValue(date14);
                	    sheet.autoSizeColumn(cellnum);
                	    cellnum++;
                }
@@ -663,7 +728,7 @@ public class WriteExcelMain2 {
             	   //This color will be green.
               	    cell = row.createCell(cellnum);
                	    cell.setCellStyle(cellGreen);
-               	    cell.setCellValue(person.getClass14());
+               	    cell.setCellValue(date14);
                	    sheet.autoSizeColumn(cellnum);
                	    cellnum++;
                }
@@ -674,7 +739,7 @@ public class WriteExcelMain2 {
                //This color will be red.
          	    cell = row.createCell(cellnum);
            	    cell.setCellStyle(cellRed);
-           	    cell.setCellValue(person.getClass14());
+           	    cell.setCellValue(date14);
            	    sheet.autoSizeColumn(cellnum);
            	    cellnum++;
            }
@@ -688,7 +753,7 @@ public class WriteExcelMain2 {
             	   //The color will be orange.
              	    cell = row.createCell(cellnum);
                	    cell.setCellStyle(cellOrange);
-               	    cell.setCellValue(person.getClass15());
+               	    cell.setCellValue(date15);
                	    sheet.autoSizeColumn(cellnum);
                	    cellnum++;
                }
@@ -697,7 +762,7 @@ public class WriteExcelMain2 {
             	   //This color will be green.
               	    cell = row.createCell(cellnum);
                	    cell.setCellStyle(cellGreen);
-               	    cell.setCellValue(person.getClass15());
+               	    cell.setCellValue(date15);
                	    sheet.autoSizeColumn(cellnum);
                	    cellnum++;
                }
@@ -708,7 +773,7 @@ public class WriteExcelMain2 {
                //This color will be red.
          	    cell = row.createCell(cellnum);
            	    cell.setCellStyle(cellRed);
-           	    cell.setCellValue(person.getClass15());
+           	    cell.setCellValue(date15);
            	    sheet.autoSizeColumn(cellnum);
            	    cellnum++;
            }
@@ -724,10 +789,10 @@ public class WriteExcelMain2 {
   
   try {
    //Write the workbook in file system
-   FileOutputStream out = new FileOutputStream(new File("EmployeeManager2.xlsx"));
+   FileOutputStream out = new FileOutputStream(new File("AdvancedEmpManager.xlsx"));
    workbook.write(out);
    out.close();
-   System.out.println("EmployeeManager.xlsx has been created successfully");
+   System.out.println("AdvancedEmpManager.xlsx has been created successfully");
   }catch (Exception e){
    e.printStackTrace();
   }
