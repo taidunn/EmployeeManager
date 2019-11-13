@@ -1,263 +1,280 @@
+import java.io.Serializable;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate; //Importing the current date at application running point.
 import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.Arrays;
+import java.util.List;
 
-public class EditingEmployee {
-	private static String holdplace;
-	private static int editcase;
-	
-	public void EditingEmployee(ArrayList<Employee> employeeList) {
-		Scanner reader = new Scanner(System.in);  // Reading from System.in
-		Employee temp = null; //Setting temp to no value because it errors out if this isn
-		//Prompt user for EmployeeID
-		//Search list for employeeID
-		System.out.println("Input for EmployeeID" );
-		holdplace = reader.nextLine();
-		for(int i = 0;i < employeeList.size(); i++) {
-			if (holdplace.equals(employeeList.get(i).getEmployeeId())) {
-				temp = employeeList.get(i);
-				//System.out.print("Found");
-				break;
-			}
-		}
-		if(temp == null) {
-		System.out.println("Employee not found.");
-		return;
-		}
+public class Employee implements Serializable {
+	private String EmployeeID;
+	private String FName;
+	private String LName;
+	private String Class1;
+	private String Class2;
+	private String Class3;
+	private String Class4;
+	private String Class5;
+	private String Class6;
+	private String Class7;
+	private String Class8;
+	private String Class9;
+	private String Class10;
+	private String Class11;
+	private String Class12;
+	private String Class13;
+	private String Class14;
+	private String Class15;
+	private List<String> classes = new ArrayList<String>();	
+	private List<String> classNames = new ArrayList<String>();
+	/*private Placeholder EmployeeClass1;
+	private Placeholder EmployeeClass2;
+	private Placeholder EmployeeClass3;
+	private Placeholder EmployeeClass4;
+	private Placeholder EmployeeClass5;
+	private Placeholder EmployeeClass6;
+	private Placeholder EmployeeClass7;
+	private Placeholder EmployeeClass8;
+	private Placeholder EmployeeClass9;
+	private Placeholder EmployeeClass10;
+	private Placeholder EmployeeClass11;
+	private Placeholder EmployeeClass12;
+	private Placeholder EmployeeClass13;
+	private Placeholder EmployeeClass14;
+	private Placeholder EmployeeClass15;*/
+
+
+	public Employee() {
 		
-		System.out.println("What would you like to edit? "
-				+ "\n1 - First Name:"
-				+ "\n2 - Last Name:"
-				+ "\n3 - Class1:"
-				+ "\n4 - Class2:"
-				+ "\n5 - Class3:"
-				+ "\n6 - Class4:"
-				+ "\n7 - Class5:"
-				+ "\n8 - Class6:"
-				+ "\n9 - Class7:"
-				+ "\n10 - Class8:"
-				+ "\n11 - Class9:"
-				+ "\n12 - Class10:"
-				+ "\n13 - Class11:"
-				+ "\n14 - Class12:"
-				+ "\n15 - Class13:"
-				+ "\n16 - Class14:"
-				+ "\n17 - Class15:");
-		editcase = reader.nextInt();
-		
-		if (editcase < 18 && editcase > 2) {
-			System.out.println("***Please type ALL dates in yyyy-MM-dd format!***\n");
-		}
-		
-		switch (editcase) {
-		
-		case 1: //Allows you to change the first name.
-			System.out.println("What is the desired first name?  ");
-			holdplace = reader.next();
-			
-			temp.setFName(holdplace);
-			for(int i = 0; i <employeeList.size();i++) {
-				if(temp.getEmployeeId().equals(employeeList.get(i).getEmployeeId())) {
-					employeeList.get(i).setFName(temp.getFName());
-				}
-			}
-			break;
-		case 2:
-			//Allows you to change the last name.
-			System.out.println("What is the desired last name?  ");
-			holdplace = reader.next();
-			
-			temp.setLName(holdplace);
-			for(int i = 0; i <employeeList.size();i++) {
-				if(temp.getEmployeeId().equals(employeeList.get(i).getEmployeeId())) {
-					employeeList.get(i).setLName(temp.getLName());
-				}
-			}
-			break;
-		case 3:
-			//Allows you to change Class #1.
-			System.out.println("What is the new expiration date for Class1? ");
-			holdplace = reader.next();
-			
-			temp.setClass1(holdplace);
-			for(int i = 0; i <employeeList.size();i++) {
-				if(temp.getEmployeeId().equals(employeeList.get(i).getEmployeeId())) {
-					employeeList.get(i).setClass1(temp.getClass1());
-				}
-			}
-			break;
-		case 4:
-			//Allows you to change Class #2.
-			System.out.println("What is the new expiration date for Class2? ");
-			holdplace = reader.next();
-			
-			temp.setClass2(holdplace);
-			for(int i = 0; i <employeeList.size();i++) {
-				if(temp.getEmployeeId().equals(employeeList.get(i).getEmployeeId())) {
-					employeeList.get(i).setClass2(temp.getClass2());
-				}
-			}
-			break;
-		case 5:
-			//Allows you to change Class #3.
-			System.out.println("What is the new expiration date for Class3? ");
-			holdplace = reader.next();
-			
-			temp.setClass3(holdplace);
-			for(int i = 0; i <employeeList.size();i++) {
-				if(temp.getEmployeeId().equals(employeeList.get(i).getEmployeeId())) {
-					employeeList.get(i).setClass3(temp.getClass3());
-				}
-			}
-			break;
-		case 6:
-			//Allows you to change Class #4.
-			System.out.println("What is the new expiration date for Class4? ");
-			holdplace = reader.next();
-			
-			temp.setClass4(holdplace);
-			for(int i = 0; i <employeeList.size();i++) {
-				if(temp.getEmployeeId().equals(employeeList.get(i).getEmployeeId())) {
-					employeeList.get(i).setClass4(temp.getClass4());
-				}
-			}
-			break;
-		case 7:
-			//Allows you to change Class #5.
-			System.out.println("What is the new expiration date for Class5? ");
-			holdplace = reader.next();
-			
-			temp.setClass5(holdplace);
-			for(int i = 0; i <employeeList.size();i++) {
-				if(temp.getEmployeeId().equals(employeeList.get(i).getEmployeeId())) {
-					employeeList.get(i).setClass5(temp.getClass5());
-				}
-			}
-			break;
-		case 8:
-			//Allows you to change Class #6.
-			System.out.println("What is the new expiration date for Class6? ");
-			holdplace = reader.next();
-			
-			temp.setClass6(holdplace);
-			for(int i = 0; i <employeeList.size();i++) {
-				if(temp.getEmployeeId().equals(employeeList.get(i).getEmployeeId())) {
-					employeeList.get(i).setClass6(temp.getClass6());
-				}
-			}
-			break;
-		case 9:
-			//Allows you to change Class #7.
-			System.out.println("What is the new expiration date for Class7? ");
-			holdplace = reader.next();
-			
-			temp.setClass7(holdplace);
-			for(int i = 0; i <employeeList.size();i++) {
-				if(temp.getEmployeeId().equals(employeeList.get(i).getEmployeeId())) {
-					employeeList.get(i).setClass7(temp.getClass7());
-				}
-			}
-			break;
-		case 10:
-			//Allows you to change Class #8.
-			System.out.println("What is the new expiration date for Class8? ");
-			holdplace = reader.next();
-			
-			temp.setClass8(holdplace);
-			for(int i = 0; i <employeeList.size();i++) {
-				if(temp.getEmployeeId().equals(employeeList.get(i).getEmployeeId())) {
-					employeeList.get(i).setClass8(temp.getClass8());
-				}
-			}
-			break;
-		case 11:
-			//Allows you to change Class #9.
-			System.out.println("What is the new expiration date for Class9? ");
-			holdplace = reader.next();
-			
-			temp.setClass9(holdplace);
-			for(int i = 0; i <employeeList.size();i++) {
-				if(temp.getEmployeeId().equals(employeeList.get(i).getEmployeeId())) {
-					employeeList.get(i).setClass9(temp.getClass9());
-				}
-			}
-			break;
-		case 12:
-			//Allows you to change Class #10.
-			System.out.println("What is the new expiration date for Class10? ");
-			holdplace = reader.next();
-			
-			temp.setClass10(holdplace);
-			for(int i = 0; i <employeeList.size();i++) {
-				if(temp.getEmployeeId().equals(employeeList.get(i).getEmployeeId())) {
-					employeeList.get(i).setClass10(temp.getClass10());
-				}
-			}
-			break;
-		case 13:
-			//Allows you to change Class #11.
-			System.out.println("What is the new expiration date for Class11? ");
-			holdplace = reader.next();
-			
-			temp.setClass11(holdplace);
-			for(int i = 0; i <employeeList.size();i++) {
-				if(temp.getEmployeeId().equals(employeeList.get(i).getEmployeeId())) {
-					employeeList.get(i).setClass11(temp.getClass11());
-				}
-			}
-			break;
-		case 14:
-			//Allows you to change Class #12.
-			System.out.println("What is the new expiration date for Class12? ");
-			holdplace = reader.next();
-			
-			temp.setClass12(holdplace);
-			for(int i = 0; i <employeeList.size();i++) {
-				if(temp.getEmployeeId().equals(employeeList.get(i).getEmployeeId())) {
-					employeeList.get(i).setClass12(temp.getClass12());
-				}
-			}
-			break;
-		case 15:
-			//Allows you to change Class #13.
-			System.out.println("What is the new expiration date for Class13? ");
-			holdplace = reader.next();
-			
-			temp.setClass13(holdplace);
-			for(int i = 0; i <employeeList.size();i++) {
-				if(temp.getEmployeeId().equals(employeeList.get(i).getEmployeeId())) {
-					employeeList.get(i).setClass13(temp.getClass13());
-				}
-			}
-			break;
-		case 16:
-			//Allows you to change Class #14.
-			System.out.println("What is the new expiration date for Class14? ");
-			holdplace = reader.next();
-			
-			temp.setClass14(holdplace);
-			for(int i = 0; i <employeeList.size();i++) {
-				if(temp.getEmployeeId().equals(employeeList.get(i).getEmployeeId())) {
-					employeeList.get(i).setClass14(temp.getClass14());
-				}
-			}
-			break;
-		case 17:
-			//Allows you to change Class #15.
-			System.out.println("What is the new expiration date for Class15? ");
-			holdplace = reader.next();
-			
-			temp.setClass15(holdplace);
-			for(int i = 0; i <employeeList.size();i++) {
-				if(temp.getEmployeeId().equals(employeeList.get(i).getEmployeeId())) {
-					employeeList.get(i).setClass15(temp.getClass15());
-				}
-			}
-			break;
-		default:
-			//If none of the numbers are specified are chosen then will stop the code from running.
-			//The program completley stops here as of this moment it doesn't cycle.
-			//System.out.println(
-			break;
-		}
 	}
+	
+	public Employee(String EmployeeID, String FName, String LName, String info1, String info2, String info3, String info4, String info5, String info6, String info7, String info8, String info9, String info10, String info11, String info12, String info13, String info14, String info15) {
+		this.EmployeeID = EmployeeID;
+		this.FName = FName;
+		this.LName = LName;
+		this.Class1 = info1;
+		this.Class2 = info2;
+		this.Class3 = info3;
+		this.Class4 = info4;
+		this.Class5 = info5;
+		this.Class6 = info6;
+		this.Class7 = info7;
+		this.Class8 = info8;
+		this.Class9 = info9;
+		this.Class10 = info10;
+		this.Class11 = info11;
+		this.Class12 = info12;
+		this.Class13 = info13;
+		this.Class14 = info14;
+		this.Class15 = info15;
+		
+		this.classes = Arrays.asList(new String[] {info1, info2, info3, info4, info5, info6, info7, info8, info9, info10, info11, info12, info13, info14, info15});
+
+	}
+	
+	public void setClassNames(List<String> classNames) {
+		this.classNames = classNames;
+	}
+	
+	public List<String> getClassNames() {
+		return classNames;
+	}
+	
+	public List<String> getClasses() {
+		return Arrays.asList(new String[] {this.Class1, this.Class2, this.Class3, this.Class4, this.Class5, this.Class6, this.Class7, this.Class8, this.Class9, this.Class10, this.Class11, this.Class12, this.Class13, this.Class14, this.Class15});
+	}
+	
+	public String getEmployeeId() {
+		return EmployeeID;
+	}
+	
+	public void setEmployeeId(String EmployeeId) {
+		this.EmployeeID = EmployeeId;
+	}
+	
+	public String getFName() {
+		return FName;
+	}
+	
+	public void setFName(String FName) {
+		this.FName = FName;
+	}
+	
+	public String getLName() {
+		return LName;
+	}
+	
+	public void setLName(String LName) {
+		this.LName = LName;
+	}
+	
+	public String getClass1() {
+		return Class1;
+	}
+	
+	public void setClass1(String Class1) {
+		this.Class1 = Class1;
+	}
+	
+	public String getClass2() {
+		return Class2;
+	}
+	
+	public void setClass2(String Class2) {
+		this.Class2 = Class2;
+	}
+	
+	public String getClass3() {
+		return Class3;
+	}
+	
+	public void setClass3(String Class3) {
+		this.Class3 = Class3;
+	}
+	
+	public String getClass4() {
+		return Class4;
+	}
+	
+	public void setClass4(String Class4) {
+		this.Class4 = Class4;
+	}
+	
+	public String getClass5() {
+		return Class5;
+	}
+	
+	public void setClass5(String Class5) {
+		this.Class5 = Class5;
+	}
+	
+	public String getClass6() {
+		return Class6;
+	}
+	
+	public void setClass6(String Class6) {
+		this.Class6 = Class6;
+	}
+	
+	public String getClass7() {
+		return Class7;
+	}
+	
+	public void setClass7(String Class7) {
+		this.Class7 = Class7;
+	}
+	
+	public String getClass8() {
+		return Class8;
+	}
+	
+	public void setClass8(String Class8) {
+		this.Class8 = Class8;
+	}
+	
+	public String getClass9() {
+		return Class9;
+	}
+	
+	public void setClass9(String Class9) {
+		this.Class9 = Class9;
+	}
+	
+	public String getClass10() {
+		return Class10;
+	}
+	
+	public void setClass10(String Class10) {
+		this.Class10 = Class10;
+	}
+	
+	public String getClass11() {
+		return Class11;
+	}
+	
+	public void setClass11(String Class11) {
+		this.Class11 = Class11;
+	}
+	
+	public String getClass12() {
+		return Class12;
+	}
+	
+	public void setClass12(String Class12) {
+		this.Class12 = Class12;
+	}
+	
+	public String getClass13() {
+		return Class13;
+	}
+	
+	public void setClass13(String Class13) {
+		this.Class13 = Class13;
+	}
+	
+	public String getClass14() {
+		return Class14;
+	}
+	
+	public void setClass14(String Class14) {
+		this.Class14 = Class14;
+	}
+	
+	public String getClass15() {
+		return Class15;
+	}
+	
+	public void setClass15(String Class15) {
+		this.Class15 = Class15;
+	}
+	
+	public String newDate(java.util.Date date2) {
+    	String newstring = new SimpleDateFormat("yyyy-MM-dd").format(date2);
+    	//System.out.println(newstring); // 2011-01-18
+    	return newstring;
+	}
+	
+	public void print() {
+		System.out.print("\n" + EmployeeID + " || ");
+		System.out.print(FName + " || ");
+		System.out.print(LName + " || ");
+		System.out.print(Class1 + " || ");
+		System.out.print(Class2 + " || ");
+		System.out.print(Class3 + " || ");
+		System.out.print(Class4 + " || ");
+		System.out.print(Class5 + " || ");
+		System.out.print(Class6 + " || ");
+		System.out.print(Class7 + " || ");
+		System.out.print(Class8 + " || ");
+		System.out.print(Class9 + " || ");
+		System.out.print(Class10 + " || ");
+		System.out.print(Class11 + " || ");
+		System.out.print(Class12 + " || ");
+		System.out.print(Class13 + " || ");
+		System.out.print(Class14 + " || ");
+		System.out.print(Class15 + " || ");
+	}
+	
+//	public void pfile() {
+//		System.out.printf("%-10s%-10d%-10c%-10f\\n", EmployeeID, FName, LName, Class1, Class2, Class3, Class4, Class5, Class6, Class7, Class8, Class9, Class10, Class11, Class12, Class13, Class14, Class15);
+//		System.out.println(EmployeeID);
+//		System.out.println(FName);
+//		System.out.println(LName);
+//		System.out.println(Class1);
+//		System.out.println(Class2);
+//		System.out.println(Class3);
+//		System.out.println(Class4);
+//		System.out.println(Class5);
+//		System.out.println(Class6);
+//		System.out.println(Class7);
+//		System.out.println(Class8);
+//		System.out.println(Class9);
+//		System.out.println(Class10);
+//		System.out.println(Class11);
+//		System.out.println(Class12);
+//		System.out.println(Class13);
+//		System.out.println(Class14);
+//		System.out.println(Class15);
+//	}
+	
+	
 }
