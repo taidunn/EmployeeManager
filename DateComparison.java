@@ -12,7 +12,6 @@ public class DateComparison {
 		LocalDateTime myDateObj = LocalDateTime.now();
 		DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 		String LocalInformation = myDateObj.format(myFormatObj);
-		List<Date> dates = new ArrayList<Date>();
 		String first = null;
 		String last = null;
 		String id = null;
@@ -27,6 +26,7 @@ public class DateComparison {
 				last = (employeeList.get(i).getLName());
 				id = (employeeList.get(i).getEmployeeId());
 				full = (first + " " + last + "'s (" + id + ") ");
+				List<Date> dates = new ArrayList<Date>();
 
 				for (String classDate : employeeList.get(i).getClasses()) {
 					Date date = null;
